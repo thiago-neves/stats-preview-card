@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap");
+
+:root {
+  /* Radio sizes */
+  --radius-50: 5px;
+  --radius-100: 10px;
+  --radius-200: 20px;
+  --radius-300: 30px;
+
+  /* Margin and padding sizes */
+  --spacing-100: 8px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 32px;
+  --spacing-500: 40px;
+  --spacing-600: 48px;
+  --spacing-700: 56px;
+  --spacing-800: 64px;
+  --spacing-900: 72px;
+
+  /* Primary */
+  --soft-violet: 277, 64%, 61%;
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-desaturated-blue: hsl(244, 38%, 16%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --slightly-transparent-white-stat: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 120%;
+  font-family: "Inter";
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--very-dark-blue);
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  margin: 0 var(--spacing-300);
+  border-radius: var(--radius-100);
+  background-color: var(--dark-desaturated-blue);
+}
+
+.overlay::after {
+  top: 0;
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  aspect-ratio: 1.3625;
+  background-color: hsla(280, 100%, 25%, 0.6);
+}
+
+.image {
+  width: 100%;
+}
+
+.desktop {
+  display: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  padding: var(--spacing-400);
+}
+
+.title,
+.accent {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.accent {
+  color: hsl(var(--soft-violet));
+}
+
+.paragraph {
+  line-height: 170%;
+  color: var(--slightly-transparent-white);
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+  padding-top: var(--spacing-300);
+}
+
+.stat h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.stat p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Lexend Deca";
+  margin-top: var(--spacing-100);
+  color: var(--slightly-transparent-white-stat);
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .content {
+    gap: var(--spacing-300);
+    padding: var(--spacing-900);
+    padding-right: 120px;
+  }
+
+  .title,
+  .accent {
+    font-size: 36px;
+  }
+
+  .title,
+  .paragraph {
+    width: 360px;
+    text-align: left;
+  }
+
+  .stats {
+    text-align: left;
+    flex-direction: row;
+    gap: var(--spacing-600);
+    padding-top: var(--spacing-500);
+  }
+}
